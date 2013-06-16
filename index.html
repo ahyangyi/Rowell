@@ -14,18 +14,7 @@
 
     <link rel='shortcut icon' href='favicon.ico'>
 
-    <script type="text/javascript">
-		  var _gaq = _gaq || [];
-		  _gaq.push(['_setAccount', 'UA-27374551-1']);
-		  _gaq.push(['_setDomainName', 'roach-works.com']);
-		  _gaq.push(['_trackPageview']);
-
-		  (function() {
-		    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-		    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-		    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-		  })();
-	</script>
+	<script src='./js/site/head.js'></script>
 </head>
 
 <body>
@@ -89,9 +78,9 @@
     		<h3>登录</h3>
     	</div>
 		<div class='modal-body'>
-			<p><a id="accounts9-login-path" href="https://accounts.net9.org/api/authorize?redirect_uri=https%3A%2F%2Frowell.net9.org%2Flogin_accounts9.html&amp;client_id=FYDBDkj2417_TIEuhcf5Juxi3h0" id="login-accounts9"><img src="./img/accounts9-login.png" alt="Login with Accounts9"></a> (推荐)</p>
+			<p><a id="accounts9-login-path" href="https://accounts.net9.org/api/authorize?redirect_uri=https%3A%2F%2Frowell.net9.org%2Flogin_accounts9.html&amp;client_id=B_Ap-lzzoKsS_59EFYcr7cH3DDo" id="login-accounts9" target="_blank"><img src="./img/accounts9-login.png" alt="Login with Accounts9"></a> (推荐)</p>
 			<p><small><a href="" id="login-other-method-button">其他方式</a></small></p>
-			<p id="login-other-method" class="hide"><small>使用<a id="login-net9-bbs" href="https://bbs.net9.org:8080/auth/auth?redirect_uri=https%3A%2F%2Frowell.net9.org%2Flogin.html&amp;response_type=code&amp;client_id=0">酒井ID</a>登录</small></p>
+			<p id="login-other-method" class="hide"><small>使用<a id="login-net9-bbs" href="https://bbs.net9.org:8080/auth/auth?redirect_uri=https%3A%2F%2Frowell.net9.org%2Flogin.html&amp;response_type=code&amp;client_id=0" target="_blank">酒井ID</a>登录</small></p>
 			<!--
     		<p>点击<a href='' id='login-path' target='_blank'>此处</a>获取登录码。</p>
     		<form action='' method='get'>
@@ -474,16 +463,8 @@
     <script src='./js/bbs/bbs_hotkey.js'></script>
     <script src='./js/bbs/bbs_utility.js'></script>
     <script src='./js/bbs/bbs_global.js'></script>
-
-    <script type='text/javascript'>
-			$(document).ready(function(){
-				UI_register_func();
-				UI_register_hotkeys();
-				// UI_set_fileupload();
-				UI_init();
-				UI_session_retrieved($.cookie(bbs_session_cookie));
-			});
-    </script>
+    
+    <script src='./js/site/foot.js'></script>
   </body>
 </html>
 
