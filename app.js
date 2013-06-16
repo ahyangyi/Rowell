@@ -8,8 +8,8 @@ chrome.app.runtime.onLaunched.addListener(function() {
   // Center window on screen.
   var screenWidth = screen.availWidth;
   var screenHeight = screen.availHeight;
-  var width = 500;
-  var height = 300;
+  var width = 960;
+  var height = 540;
 
   chrome.app.window.create('index.html', {
     bounds: {
