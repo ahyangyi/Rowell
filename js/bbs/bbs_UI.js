@@ -451,7 +451,12 @@ function UI_init() {
     }
     $('body').css('zoom', scale);
 
-    $('#login-path').attr('href', bbs_query.server + bbs_query.auth.auth);
+    //$('#login-path').attr('href', bbs_query.server + bbs_query.auth.auth);
+    $('#login-path').click( function (event) {
+        chrome.experimental.identity.launchWebAuthFlow(
+            {'url': bbs_query.server + bbs_query.auth.auth, 'interactive': true},
+            function(redirect_url) { alert ("^_^")});
+    });
     //$('a#bbs-login-path').attr('href', bbs_query.server + bbs_query.auth.auth);
     //$('a#accounts9-login-path').attr('href', accounts9.server + accounts9.auth);
     $(document).attr("title", bbs_string.title);

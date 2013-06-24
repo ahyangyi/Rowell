@@ -26,7 +26,7 @@ var bbs_query = {
     client_id           :   0,
     client_secret       :   0,
     auth : {
-        auth            :   '/auth/auth?response_type=token&client_id=0&redirect_uri=',
+        auth            :   '/auth/auth?response_type=token&client_id=rowella&redirect_uri=https://fediheklgbbjpfngpdokhcnbiloghfah.chromiumapp.org/bbs_oauth',
         token           :   '/auth/token',
         session_verify  :   '/session/verify'
     },
@@ -49,8 +49,6 @@ var bbs_query = {
         clear_unread    :   '/board/clear_unread'
     }
 };
-
-bbs_query.auth.auth += encodeURIComponent(website_address);
 
 var bbs_type = {
     path : {
