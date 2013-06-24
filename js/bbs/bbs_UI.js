@@ -455,7 +455,17 @@ function UI_init() {
     $('#login-path').click( function (event) {
         chrome.experimental.identity.launchWebAuthFlow(
             {'url': bbs_query.server + bbs_query.auth.auth, 'interactive': true},
-            function(redirect_url) { alert ("^_^")});
+            function(redirect_url) { 
+                bbs_session = $.url(redirect_url).param('access_token');
+                if (typeof(bbs_session) == 'undefined') {
+                    bbs_session = $.cookie(bbs_type.cookie.session);
+                    if (bbs_session == null || typeof(bbs_session) == 'undefined' ||
+                        bbs_session == bbs_type.cookie.error_session) {
+                        bbs_session = null;
+                    }       
+                }
+                verifySession(bbs_session, true, UI_login_finished);
+            });
     });
     //$('a#bbs-login-path').attr('href', bbs_query.server + bbs_query.auth.auth);
     //$('a#accounts9-login-path').attr('href', accounts9.server + accounts9.auth);
