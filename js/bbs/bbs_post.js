@@ -7,8 +7,8 @@ function postPrepare(mode, callback_func){
         session : bbs_session,
         board : boardPathTerm.name,
         for     : 'new',
-        anonymous   :   1
-//      attachments : '[{"name":"test","store_id":"test"}]'
+        anonymous   :   1,
+        attachments : '[{"name":"test","store_id":"test"}]'
     };
     if (mode == bbs_type.write_post.reply) {
         var postPathTerm = bbs_path.getLastTermWithType(bbs_type.path.post);
@@ -56,6 +56,61 @@ function postPrepare(mode, callback_func){
                     content : 'cannot_reply'
                 };
             }
+        } else {
+            msg = {
+                type : 'error',
+                content : 'network_error'
+            };
+        }
+        UI_notify_update(msg);
+    });
+}
+
+function delPost(callback_func, popNum){
+    var boardPathTerm = bbs_path.getLastTermWithType(bbs_type.path.board);
+    var postPathTerm = bbs_path.getLastTermWithType(bbs_type.path.post);
+    if (boardPathTerm == null){
+        return;
+    }
+    if (postPathTerm == null) {
+        postPathTerm = bbs_path.getLastTermWithType(bbs_type.path.sticky_post);
+        if (postPathTerm != null) {
+        } else {
+            return;
+        }
+    }
+    var data = {
+        session : bbs_session,
+        board : boardPathTerm.name,
+        id : postPathTerm.data.id,
+        xid : postPathTerm.data.xid,
+    };
+    var request_settings = {
+        url : bbs_query.server + bbs_query.del_post.del_post,
+        type: 'POST',
+        data: data
+    };
+    request_settings = setAjaxParam(request_settings);
+
+    var resp = $.ajax(request_settings);
+    resp.success(function(response){
+        bbs_post_info.quote = JSON.parse(response);
+        var currentId = postPathTerm.data.id;
+        view_board(boardPathTerm.name, -1, currentId + 1, callback_func, 'click', popNum);
+        var msg = {
+            type : 'info',
+            content : 'post_delete_success'
+        };
+        UI_notify_update(msg);
+    });
+
+    resp.fail(function(jqXHR, textStatus){
+        var msg;
+        if (jqXHR.status == 403) {
+            msg = {
+                type : 'error',
+                content : 'cannot_delete_post'
+            };
         } else {
             msg = {
                 type : 'error',
@@ -165,10 +220,10 @@ function writePost(type, title, content, qmd_id, anonym, callback_func){
             view_board(boardPathTerm.name, -1, -1, callback_func, 'click', popNum);
         } else {
             var currentId = postPathTerm.data.id;
-            if (currentId + 1 < bbs_settings.post_count) {
+            if (currentId + 3 < bbs_settings.post_count) {
                 view_board(boardPathTerm.name, 1, -1, callback_func, 'click', popNum);
             } else {
-                view_board(boardPathTerm.name, -1, currentId + 1, callback_func, 'click', popNum);
+                view_board(boardPathTerm.name, -1, currentId + 3, callback_func, 'click', popNum);
             }
         }
         UI_notify_update(msg);

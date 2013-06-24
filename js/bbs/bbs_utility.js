@@ -36,3 +36,45 @@ function clear_unread(board_name, callback_func) {
         UI_notify_update(msg);
     });
 }
+
+function upload_file(file, callback_func, progress_func) {
+    if (typeof(file) == 'undefined' || file == null) {
+        return;
+    }
+
+    var request_settings = {
+        url : bbs_query.server + bbs_query.utility.upload_file,
+        type : 'POST',
+        xhr: function() {
+            myXhr = $.ajaxSettings.xhr();
+            if(myXhr.upload && progress_func){
+                myXhr.upload.addEventListener('progress', progress_func, false);
+            }
+            return myXhr;
+        },
+        data : {
+            session : bbs_session,
+            item : 'attachment'
+        }
+    };
+    request_settings = setAjaxParam(request_settings);
+    // For file upload, do not set a time out.
+    request_settings.timeout = undefined;
+
+    var fr = new FileReader();
+    fr.onload = function() {
+        var fileContentB64 = this.result.split(',')[1];
+        request_settings.data.content = fileContentB64;
+        var resp = $.ajax(request_settings);
+        resp.success(function(response) {
+            var json = JSON.parse(response);
+            callback_func(true, json.id);
+        });
+
+        resp.fail(function(jqXHR, textStatus) {
+            //TODO: add error handler
+            callback_func(false);
+        });
+    };
+    fr.readAsDataURL(file);
+}

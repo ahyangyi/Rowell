@@ -131,7 +131,7 @@
                                         <a href='javascript:void(0)' class='edit-post unimplemented'>修改本帖 (E)</a>
                                     </li>
                                     <li>
-                                        <a href='javascript:void(0)' class='delete-post unimplemented'>删除本帖 (d)</a>
+                                        <a href='javascript:void(0)' class='delete-post-button'>删除本帖 (d)</a>
                                     </li>
                                 </ul>
                             </div>
@@ -381,18 +381,40 @@
                             </div>
                         </div>
                         <div class='attach-area hide' id='fileupload'>
-                            <div>
-                                <span>
-                                    拖拽文件至此处开始上传，或点击按钮添加文件。
+                            <span class='drag-file-note'>
+                                拖拽文件至此处开始上传，或点击按钮添加文件。
+                            </span>
+                            <div class='pull-right add-file-button'>
+                                <span class="btn btn-success fileinput-button">
+                                    <i class="icon-plus icon-white"></i>
+                                    <span>添加文件...</span>
+                                    <input class='fileuploadbox' type="file" name="file-input" multiple>
                                 </span>
-                                <div class='pull-right'>
-                                    <span class="btn btn-success fileinput-button">
-                                        <i class="icon-plus icon-white"></i>
-                                        <span>添加文件...</span>
-                                        <input class='fileuploadbox' type="file" name="files[]" multiple="">
-                                    </span>
-                                </div>
                             </div>
+                            <ul class='file-list'>
+                                <li>
+                                    <div class='file-wrapper'>
+                                        <i class="icon-file"></i>
+                                        <span class="filename-area">Filename.ext</span>
+                                        <div class="progress progress-striped active file-upload-progress">
+                                            <div class="bar" style="width: 40%;"></div>
+                                        </div>
+                                        <span>0.0M / 16.9M</span>
+                                        <button type='button' class='close cancel-button'>&times;</button>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class='file-wrapper'>
+                                        <i class="icon-file"></i>
+                                        <span class="filename-area">Filename.ext</span>
+                                        <div class="progress progress-striped active file-upload-progress">
+                                            <div class="bar" style="width: 40%;"></div>
+                                        </div>
+                                        <span>0.0M / 16.9M</span>
+                                        <button type='button' class='close cancel-button'>&times;</button>
+                                    </div>
+                                </li>
+                            </ul>
                         </div>
                         <div class='control-group'>
                             内容：<textarea class='input-xlarge' id='write-post-content'></textarea>
@@ -472,9 +494,7 @@
 
     <!-- Placed at the end of the document so the pages load faster -->
     <script src='./js/jquery/jquery.min.js'></script>
-    <script src='./js/jquery/jquery.ui.widget.js'></script>
     <script src='./js/jquery/jquery.cookie.js'></script>
-    <script src='./js/jquery/jquery.fileupload.js'></script>
     <script src='./js/jquery/jquery.purl.js'></script>
     <script src='./js/bootstrap/bootstrap.min.js'></script>
 

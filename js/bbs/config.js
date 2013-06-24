@@ -18,7 +18,8 @@ var bbs_string = {
     attach_pic_tooltip  :   '点击查看大图',
     attach_other_text   :   '本帖附带文件如下：',
     attach_other_tooltip:   '下载文件',
-    confirm_cancel_post :   '确定舍弃当前未发布文章吗？'
+    confirm_cancel_post :   '确定舍弃当前未发布文章吗？',
+    confirm_delete_post :   '确定删除该文章吗？'
 };
 
 var bbs_query = {
@@ -26,7 +27,7 @@ var bbs_query = {
     client_id           :   0,
     client_secret       :   0,
     auth : {
-        auth            :   '/auth/auth?response_type=token&client_id=rowella&redirect_uri=https://fediheklgbbjpfngpdokhcnbiloghfah.chromiumapp.org/bbs_oauth',
+        auth            :   '/auth/auth?response_type=token&client_id=rowella&redirect_uri=https://fediheklgbbjpfngpdokhcnbiloghfah.chromiumapp.org/',
         token           :   '/auth/token',
         session_verify  :   '/session/verify'
     },
@@ -45,8 +46,12 @@ var bbs_query = {
         prepare         :   '/post/prepare',
         attach          :   '/store/new'
     },
+    del_post : {
+        del_post        :   '/post/delete',
+    },
     utility : {
-        clear_unread    :   '/board/clear_unread'
+        clear_unread    :   '/board/clear_unread',
+        upload_file     :   '/store/new'
     }
 };
 
@@ -110,6 +115,7 @@ var bbs_msg = {
         post_reach_last : '已到达本版最后一贴。',
         post_reach_first : '已到达本版第一帖。',
         post_publish_success : '帖子发表成功。',
+        post_delete_success : '帖子删除成功。',
         mailbox_reach_last : '已到达收件箱最后一页。',
         mailbox_reach_first : '已到达收件箱第一页。',
         mail_reach_last : '已到达最后一封邮件。',
@@ -127,7 +133,8 @@ var bbs_msg = {
         unknown_error : '出现未知错误，请重新请求或联系开发者。',
         cannot_reply    :   '此帖已被设置为不可回复。',
         cannot_post     :   '本版已被设置为只读。',
-        invalid_sticky_op:  '无法对置底贴进行该操作。'
+        invalid_sticky_op:  '无法对置底贴进行该操作。',
+        cannot_delete_post   :   '您无权限删除该贴。'
     },
     warning : {
         class_name : 'alert alert-block',
