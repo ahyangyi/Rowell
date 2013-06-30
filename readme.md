@@ -15,6 +15,10 @@ Rowella是Rowell的Chrome App版本，命名为Rowella是因为希望它有个�
 
 * 由于使用到了Chrome浏览器的experimental功能，目前暂时不能把它加入Chrome Web Store中。
 
+* 还是由于使用到了Chrome浏览器的experimental功能，需要你进入chrome://flags手工允许Experimental Extension APIs。
+
+* 不知道为什么我这里用不了Rowella了，等我赶完作业我来检查一下……
+
 * 不能保存Cookie，每次需要重新登录。
 
 #Rowell
