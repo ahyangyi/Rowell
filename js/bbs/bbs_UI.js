@@ -287,6 +287,9 @@ function UI_register_func(){
         }
     });
 
+    window.onresize = UI_onresize;
+    window.onfocus = UI_onfocus;
+    xmpp_ui_init();
 }
 
 
@@ -583,6 +586,7 @@ function UI_login_finished(result){
         $('#unlogged-panel').hide();
         $('#logged-navbar').show();
         view_boardlist(bbs_type.entry.favboard, -1, '', UI_update, 0);
+        xmpp_connect();
     } else {
         $('#unlogged-navbar').show();
         $('#unlogged-panel').show();
@@ -644,6 +648,7 @@ function UI_update(){
     UI_hide_backdrop();
     UI_hide_loading();
     $('#logged-panel').show();
+    xmpp_onresize();
 }
 
 function UI_notify_update(msg){
@@ -924,4 +929,12 @@ function UI_generate_uploading_file_entry(file) {
 
 function UI_register_hotkeys(){
     register_default_hotkeys();
+}
+
+function UI_onresize(){
+    xmpp_onresize();
+}
+
+function UI_onfocus() {
+    xmpp_onfocus();
 }
