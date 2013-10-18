@@ -1,8 +1,8 @@
 {
     "manifest_version": 2,
     "name": "Rowella",
-    "version": "1",
-    "minimum_chrome_version": "27",
+    "version": "2",
+    "minimum_chrome_version": "29",
     "icons": {
         "16": "icon_16.png",
         "128": "icon_128.png"
@@ -15,7 +15,6 @@
     "permissions": [
         "https://docs.google.com/feeds/",
         "https://docs.googleusercontent.com/",
-        "experimental",
         "identity"
     ]
 }

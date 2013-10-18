@@ -548,7 +548,7 @@ function UI_init() {
 
     //$('#login-path').attr('href', bbs_query.server + bbs_query.auth.auth);
     $('#login-path').click( function (event) {
-        chrome.experimental.identity.launchWebAuthFlow(
+        chrome.identity.launchWebAuthFlow(
             {'url': bbs_query.server + bbs_query.auth.auth, 'interactive': true},
             function(redirect_url) { 
                 bbs_session = $.url(redirect_url).param('access_token');

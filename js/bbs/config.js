@@ -38,7 +38,7 @@ var bbs_query = {
     xmpp_resource       :   'Rowell',
     xmpp_wait           :   300,
     auth : {
-        auth            :   '/auth/auth?response_type=token&client_id=rowella&redirect_uri=https://fediheklgbbjpfngpdokhcnbiloghfah.chromiumapp.org/',
+        auth            :   '/auth/auth?response_type=token&client_id=rowella&redirect_uri=https://ppjcpnpepeinbeaifllccdgongjkdoen.chromiumapp.org/',
         token           :   '/auth/token',
         session_verify  :   '/session/verify'
     },
