@@ -3,9 +3,11 @@
 ##简介
 Rowella是Rowell的Chrome App版本，命名为Rowella是因为希望它有个能跟Rowell略微区分的名字，但是又体现出它是Rowell的fork，最后顺便偷偷地把我的ID混进去。。。
 
-##如何使用
+##如何安装
 
-* 由于目前不能直接安装（参见第一条Bug），请进入chrome://extensions，选Load unpacked extension...然后选择本工程所在目录。
+* 直接安装使用是不成的！需要你自己修改一下config.js里面的redirect_url，改成你本地的app编号，以及在net9的oauth服务上注册一个自己的app ID才可以。
+
+* 不过你现在从Chrome Web Store已经可以找到Rowella啦！
 
 ##独有功能
 
@@ -13,13 +15,7 @@ Rowella是Rowell的Chrome App版本，命名为Rowella是因为希望它有个�
 
 ##已知Bug
 
-* 由于使用到了Chrome浏览器的experimental功能，目前暂时不能把它加入Chrome Web Store中。
-
-* 还是由于使用到了Chrome浏览器的experimental功能，需要你进入chrome://flags手工允许Experimental Extension APIs。
-
-* 不知道为什么我这里用不了Rowella了，等我赶完作业我来检查一下……
-
-* 不能保存Cookie，每次需要重新登录。
+* 矮油！之前的bug都因为种种原因消失了。
 
 #Rowell
 
