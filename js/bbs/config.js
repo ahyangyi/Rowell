@@ -6,7 +6,7 @@ var bbs_string = {
     mailbox_name        :   '站内信',
     title               :   '9# BBS - Rowell v0.3.2',
     version             :   '0.3.2',
-    send_source         :   '[Sent from Rowell v0.3.2]',
+    send_source         :   '[Sent from Rowell v0.3.2 / Rowella V6]',
     unimpltd_title      :   '矮油',
     unimpltd_text       :   '此功能尚未实现，我们将在后续版本中添加，敬请谅解。',
     entry_folder        :   '[目录]',
