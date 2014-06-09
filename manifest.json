@@ -1,7 +1,7 @@
 {
     "manifest_version": 2,
     "name": "Rowella",
-    "version": "5",
+    "version": "6",
     "minimum_chrome_version": "29",
     "icons": {
         "16": "icon_16.png",

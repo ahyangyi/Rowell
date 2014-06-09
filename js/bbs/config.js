@@ -4,7 +4,7 @@ var bbs_string = {
     favboard_name       :   '收藏夹',
     allboard_name       :   '所有版面',
     mailbox_name        :   '站内信',
-    title               :   '9# BBS - Rowell v0.3.2',
+    title               :   '9# BBS - Rowell v0.3.2 - Rowella V6',
     version             :   '0.3.2',
     send_source         :   '[Sent from Rowell v0.3.2 / Rowella V6]',
     unimpltd_title      :   '矮油',
