@@ -506,7 +506,11 @@ function UI_set_unread() {
 function UI_init() {
     UI_show_backdrop();
 
-    $('#login-path').click( function (event) {
+    UI_register_func();
+    UI_register_hotkeys();
+    UI_set_fileupload();
+
+    $('#login-bbs').click( function (event) {
         chrome.identity.launchWebAuthFlow(
             {'url': bbs_query.server + bbs_query.auth.auth, 'interactive': true},
             function(redirect_url) { 
