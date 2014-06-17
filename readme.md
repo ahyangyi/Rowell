@@ -15,7 +15,7 @@ Rowella是Rowell的Chrome App版本，命名为Rowella是因为希望它有个�
 
 ##已知Bug
 
-* 矮油！之前的bug都因为种种原因消失了。
+* Rowella v5-v8有不能登录和不能发帖等问题……啊啊啊……敬请期待Rowella v9.
 
 #Rowell
 
