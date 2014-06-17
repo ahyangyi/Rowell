@@ -180,8 +180,9 @@ pre.post-view-area {
     margin-bottom: 10px;
     margin-right: 10px; 
     min-height: 380px;
+    /* Overriding Bootstrap */
     font-size: 13px;
-    line-height: 19.5px;
+    line-height: 13px;
 }
 
 tt {
