@@ -4,9 +4,9 @@ var bbs_string = {
     favboard_name       :   '收藏夹',
     allboard_name       :   '所有版面',
     mailbox_name        :   '站内信',
-    title               :   '9# BBS - Rowell v0.3.2',
+    title               :   '9# BBS - Rowell v0.3.2 / Ahyy mirror',
     version             :   '0.3.2',
-    send_source         :   '[Sent from Rowell v0.3.2]',
+    send_source         :   '[Sent from Rowell v0.3.2 / Ahyy mirror]',
     unimpltd_title      :   '矮油',
     unimpltd_text       :   '此功能尚未实现，我们将在后续版本中添加，敬请谅解。',
     entry_folder        :   '[目录]',
@@ -31,7 +31,7 @@ var bbs_string = {
 
 var bbs_query = {
     server              :   'https://bbs.net9.org:8080',
-    client_id           :   0,
+    client_id           :   'rowell-pacman',
     client_secret       :   0,
     xmpp_domain         :   'bbs.net9.org',
     bosh_url            :   'http://www.henryhu.net:5280/http-bind',
